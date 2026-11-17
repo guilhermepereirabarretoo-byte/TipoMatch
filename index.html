@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#7657f6">
+<meta name="description" content="TipoMatch — vídeo chamadas e chat para maiores de 18 anos">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+<title>TipoMatch</title>
+</head>
+<body>
+<header><div class="logo">♡</div><div><strong>TipoMatch</strong><small>Vídeo chamadas e chat</small></div><span class="adult">18+</span></header>
+<main>
+<section id="age" class="screen active">
+  <div class="hero"><div class="biglogo">♡</div><h1>Conheça pessoas.<br>Converse de verdade.</h1><p>Faça novas amizades por chat e vídeo.</p></div>
+  <label>Seu nome<input id="name" placeholder="Como podemos te chamar?"></label>
+  <label>Ano de nascimento<input id="year" inputmode="numeric" type="number" placeholder="Ex.: 1998"></label>
+  <label class="check"><input id="terms" type="checkbox"> Confirmo que tenho 18 anos ou mais e aceito os termos.</label>
+  <p id="error" class="error"></p>
+  <button class="primary" onclick="enterApp()">Entrar no TipoMatch</button>
+  <p class="fine">A checagem por ano é apenas demonstrativa. Um serviço real precisa de verificação de idade robusta.</p>
+</section>
+<section id="discover" class="screen">
+  <div class="banner"><h2>Sua próxima conversa começa aqui</h2><p>Descubra pessoas e comece uma amizade.</p></div>
+  <h2>Pessoas para conhecer</h2>
+  <div class="person"><div class="avatar pink">M</div><div><b>Marina</b><small>Música e viagens</small></div><button onclick="toast('O chat será conectado na próxima etapa.')">Conversar</button></div>
+  <div class="person"><div class="avatar blue">L</div><div><b>Lucas</b><small>Filmes e games</small></div><button onclick="toast('O chat será conectado na próxima etapa.')">Conversar</button></div>
+  <div class="person"><div class="avatar peach">A</div><div><b>Ana</b><small>Conhecer pessoas novas</small></div><button onclick="toast('O chat será conectado na próxima etapa.')">Conversar</button></div>
+  <div class="person"><div class="avatar green">R</div><div><b>Rafael</b><small>Praia e fotografia</small></div><button onclick="toast('O chat será conectado na próxima etapa.')">Conversar</button></div>
+  <p class="fine">Perfis fictícios para demonstração. Nenhuma pessoa real está conectada.</p>
+</section>
+<section id="chats" class="screen empty"><div class="emptyicon">▤</div><h2>Suas conversas</h2><p>Quando você iniciar um chat, suas mensagens aparecerão aqui.</p></section>
+<section id="calls" class="screen empty"><div class="emptyicon">▣</div><h2>Videochamadas</h2><p>As chamadas ao vivo serão ativadas quando conectarmos um serviço de áudio e vídeo.</p></section>
+<section id="profile" class="screen empty"><div class="emptyicon">●</div><h2>Meu perfil</h2><p>Seu perfil e suas configurações aparecerão aqui.</p><p class="fine">Sem compra de moedas. Presentes virtuais gratuitos.</p><button class="secondary" onclick="toast('Denúncias e bloqueios serão conectados ao servidor.')">Segurança e denúncias</button></section>
+</main>
+<nav id="nav" hidden>
+<button class="selected" data-tab="discover" onclick="showTab('discover',this)">⌕<small>Descobrir</small></button>
+<button data-tab="chats" onclick="showTab('chats',this)">▤<small>Chats</small></button>
+<button data-tab="calls" onclick="showTab('calls',this)">▣<small>Chamadas</small></button>
+<button data-tab="profile" onclick="showTab('profile',this)">●<small>Perfil</small></button>
+</nav>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body></html>
